@@ -3,7 +3,9 @@
 io = require("socket.io").listen(server);
 
 app.use("/",express.static(__dirname + "/public" ));//このディレクトリの奴を使用可的な
-server.listen(8081);
+server.listen(process.env.PORT || 3000, () => {
+ console.log(`Server running.`);
+});
 //ここまでで鯖にはなってるらしいも
 
 //=========================
